@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --font-primary: "Exo 2", sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-weight-light: 300;
+
+    --md-primary: #f44336;
+    --md-on-primary: #ffffff;
+    --md-primary-container: rgba(244, 67, 54, 0.18);
+    --md-on-primary-container: #ffdad6;
+
+    --md-error: #cf6679;
+    --md-on-error: #ffffff;
+    --md-error-container: rgba(207, 102, 121, 0.2);
+    --md-on-error-container: #ffcdd2;
+
+    --md-success: #9bd880;
+    --md-on-success: #193800;
+    --md-success-container: rgba(155, 216, 128, 0.18);
+    --md-on-success-container: #c8e6b4;
+
+    --md-warning: #ffb74d;
+    --md-on-warning: #1a1c00;
+    --md-warning-container: rgba(255, 183, 77, 0.18);
+    --md-on-warning-container: #ffe0b2;
+
+    --md-info: #64b5f6;
+    --md-on-info: #001d35;
+    --md-info-container: rgba(100, 181, 246, 0.18);
+    --md-on-info-container: #bbdefb;
+
+    --md-surface: #1c1b1f;
+    --md-on-surface: #e6e1e5;
+    --md-surface-variant: #49454f;
+    --md-on-surface-variant: #cac4d0;
+
+    --md-elevation-1: 0 4px 16px rgba(0, 0, 0, 0.35);
+    --md-radius-small: 8px;
+    --md-radius-medium: 12px;
+
+    --rx-panel: rgba(15, 13, 19, 0.94);
+    --rx-panel-border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-regular);
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+.success,
+.primary,
+.warning,
+.error,
+.police,
+.ambulance {
+    color: var(--md-on-surface);
+    padding: 14px 18px;
+    font-weight: var(--font-weight-medium);
+    font-size: 14px;
+    line-height: 1.4;
+    border-radius: var(--md-radius-medium);
+    background: var(--rx-panel);
+    border: 1px solid var(--rx-panel-border);
+    box-shadow: var(--md-elevation-1);
+}
+
+.success {
+    border-left: 4px solid var(--md-success);
+}
+
+.primary {
+    border-left: 4px solid var(--md-primary);
+}
+
+.warning {
+    border-left: 4px solid var(--md-warning);
+}
+
+.error,
+.ambulance {
+    border-left: 4px solid var(--md-error);
+}
+
+.police {
+    border-left: 4px solid var(--md-info);
+}
+
+@media (width: 3840px) and (height: 2160px) {
+    .success,
+    .primary,
+    .warning,
+    .error,
+    .police,
+    .ambulance {
+        font-size: 1.5vh;
+        padding: 1.2vh 1.6vh;
+    }
+}

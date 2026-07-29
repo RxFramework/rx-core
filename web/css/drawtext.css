@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --rx-prompt-panel: #151a22;
+    --rx-prompt-panel-2: #0c0f14;
+    --rx-prompt-stroke: #2a3140;
+    --rx-prompt-text: #e6e9ef;
+    --rx-prompt-muted: #8b92a3;
+    --rx-prompt-accent: #f44336;
+    --rx-prompt-key: #09ff00;
+    --rx-prompt-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    --rx-prompt-radius: 12px;
+    --font-primary: "Exo 2", system-ui, sans-serif;
+}
+
+#drawtext-container {
+    display: none;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    font-family: var(--font-primary);
+}
+
+#drawtext-container.is-visible {
+    display: block;
+}
+
+/* ds-advancedgarage-style prompt strip (top-left) */
+.help-text-ui {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: auto;
+    padding: 12px 24px;
+    background: var(--rx-prompt-panel);
+    border: 1px solid var(--rx-prompt-stroke);
+    border-radius: var(--rx-prompt-radius);
+    box-shadow: var(--rx-prompt-shadow);
+    color: var(--rx-prompt-text);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    max-width: min(520px, 90vw);
+    text-align: left;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.help-text-ui.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.help-text-ui.hide {
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.help-text-ui.pressed .key-hint {
+    background: var(--rx-prompt-accent);
+    border-color: var(--rx-prompt-accent);
+    color: #fff;
+}
+
+#help-text-content {
+    line-height: 1.45;
+}
+
+.help-text-stack-line + .help-text-stack-line {
+    margin-top: 8px;
+}
+
+.key-hint {
+    display: inline-block;
+    min-width: 28px;
+    padding: 4px 8px;
+    margin: 0 4px 0 0;
+    background: var(--rx-prompt-panel-2);
+    border: 1px solid var(--rx-prompt-stroke);
+    border-radius: 6px;
+    color: var(--rx-prompt-key);
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Legacy position hooks (same visual, optional offsets) */
+.help-text-ui.pos-right {
+    left: auto;
+    right: 20px;
+}
+
+.help-text-ui.pos-top {
+    top: 20px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) translateY(-8px);
+}
+
+.help-text-ui.pos-top.show {
+    transform: translateX(-50%) translateY(0);
+}
+
+.help-text-ui.pos-top.hide {
+    transform: translateX(-50%) translateY(-8px);
+}
+
+@media (width: 3840px) and (height: 2160px) {
+    .help-text-ui {
+        font-size: 18px;
+        padding: 16px 28px;
+    }
+
+    .key-hint {
+        min-width: 36px;
+        padding: 6px 10px;
+        font-size: 16px;
+    }
+}
